@@ -20,10 +20,10 @@ const CreateSell = () => {
     try {
       const res = await axios.post('/store/createsell', formData);
       console.log(res.data);
-      // Handle success, e.g., show a success message to the user
+      alert("success");
     } catch (error) {
       console.error(error.response.data.error);
-      // Handle error, e.g., show an error message to the user
+      alert("error")
     }
   };
 

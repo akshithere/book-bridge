@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "./Navbar";
 import backgroundImage from "../../assets/2825710.gif";
 
 function Home() {
@@ -9,7 +8,7 @@ function Home() {
         className="home"
         style={{ backgroundImage: `url(${backgroundImage})` }}
       >
-        <Navbar />
+        
         <p>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi magni
           rerum in? Temporibus, distinctio dolorem similique dolore nam repellat
