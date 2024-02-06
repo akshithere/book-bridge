@@ -1,33 +1,49 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Borrow from './components/LendBook/Borrow';
-import Lend from './components/LendBook/Lend';
-import Store from './components/LendBook/Store';
-import Home from './components/HomePage/Home';
-import Navbar from './components/HomePage/Navbar';
-import CreateSell from './components/Store/CreateSell';
-import ReqRent from './components/Store/ReqRent';
-import AvailableBooks from './components/Store/AvailableBooks';
+import Home from "./Components/Home";
+import Signup from "./Components/Signup";
+import Login from "./Components/Login";
+import About from "./Components/About";
+import Contact from "./Components/Contact";
+import Sell from "./Components/Sell";
+import "../src/scrollbar.css"
+import AvailableBooksToRent from "./Components/AvailableBooksToRent";
 
+import {
+  RecoilRoot,
+  atom,
+  selector,
+  useRecoilState,
+  useRecoilValue,
+} from "recoil";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Store from "./Components/Store";
+import Rent from "./Components/Rent";
+import AvailableBooks from "./Components/AvailableBooks";
 
+//import CarouselBanner from "./Components/CarouselBanner";
 
-function App() {
+const App = () => {
   return (
-    <Router>
-      <div >
-        <Navbar />
-        <Routes>
-          
-        <Route path="/" element={<Home />} />
-          <Route path="/store/sell" element={<CreateSell />} />
-          <Route path="/store/availablebooks" element={<AvailableBooks />} />
-          <Route path="/store/rent" element={<ReqRent />} />
-          <Route path="/login" element={<Lend />} />
-          <Route path="/rent" element={<Borrow />} />
-        </Routes>
-      </div>
-    </Router>
-  );
-}
+    <RecoilRoot>
+      <div>
+        <>
+          <Router>
+            <Routes>
+              <Route path="/" element={<Home />}></Route>
+              <Route path="/signup" element={<Signup />}></Route>
+              <Route path="/login" element={<Login />}></Route>
+              <Route path="/about" element={<About />}></Route>
+              <Route path="/store" element={<Store />}></Route>
+              <Route path="/store/createsell" element={<Sell />}></Route>
+              <Route path="/store/rent" element={<Rent />}></Route>
+              <Route path="/contact" element={<Contact />}></Route>
+              <Route path="/store/availablebooks" element={<AvailableBooks />}></Route>
+              <Route path="/store/availablebookstorent" element={<AvailableBooks />}></Route>
 
+            </Routes>
+          </Router>
+        </>
+      </div>
+    </RecoilRoot>
+  );
+};
 export default App;
